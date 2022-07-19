@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    dir('first-test') {
+                    dir('.') {
                         dockerImage = docker.build "${env.ARTIFACT_ID}"
                     }
                 }
