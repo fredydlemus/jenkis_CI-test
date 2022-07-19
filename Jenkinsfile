@@ -7,7 +7,7 @@ pipeline{
         ARTIFACT_ID = 'webapp:${env.BUILD_NUMBER}'
     }
 
-    stages{
+    stages {
         stage('Build'){
             steps{
                 script{
