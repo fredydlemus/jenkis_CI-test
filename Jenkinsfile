@@ -1,23 +1,24 @@
-pipeline{
+pipeline {
     agent any
-    options{
+    options {
         timeout(time: 2, unit: 'MINUTES')
     }
-    environment{
+    environment {
         ARTIFACT_ID = 'webapp:${env.BUILD_NUMBER}'
     }
 
     stages {
-        stage('Build'){
-            steps{
-                script{
-                    dir('first-test'){
+        stage('Build') {
+            steps {
+                script {
+                    dir('first-test') {
                         dockerImage = docker.build "${env.ARTIFACT_ID}"
                     }
                 }
             }
-        }stage('Run tests'){
-            steps{
+        }
+        stage('Run tests') {
+            steps {
                 sh "docker run ${dockerImage.id} npm test"
             }
         }
