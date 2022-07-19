@@ -1,0 +1,20 @@
+{
+  "name": "first-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "koa": "^2.13.4",
+    "koa-router": "^11.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
