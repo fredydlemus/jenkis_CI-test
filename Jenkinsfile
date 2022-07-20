@@ -4,7 +4,7 @@ pipeline {
         timeout(time: 2, unit: 'MINUTES')
     }
     environment {
-        ARTIFACT_ID = "webapp:${env.BUILD_NUMBER}"
+        ARTIFACT_ID = "fredydlemus/webapp:${env.BUILD_NUMBER}"
     }
 
     stages {
