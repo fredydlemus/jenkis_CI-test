@@ -11,9 +11,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    
-                    dockerImage = docker.build "${env.ARTIFACT_ID}"
-                    
+                    dir('.'){
+                        dockerImage = docker.build "${env.ARTIFACT_ID}"
+                    }
                 }
             }
         }
