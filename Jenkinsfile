@@ -5,6 +5,7 @@ pipeline {
     }
     environment {
         ARTIFACT_ID = "fredydlemus/webapp:${env.BUILD_NUMBER}"
+        dockerhub=credentials('DockerHubCredentials')
     }
 
     stages {
@@ -28,6 +29,7 @@ pipeline {
                 branch 'main'
             }
             steps {
+                sh "echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin"
                 sh "docker push ${dockerImage.id}"
             }
         }
