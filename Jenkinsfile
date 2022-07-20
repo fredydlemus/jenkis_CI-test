@@ -28,11 +28,7 @@ pipeline {
                 branch 'main'
             }
             steps {
-                script {
-                    docker.withRegistry("", "DockerHubCredentials"){
-                        dockerImage.push()
-                    }
-                }
+                sh "docker push ${dockerImage.id}"
             }
         }
     }
