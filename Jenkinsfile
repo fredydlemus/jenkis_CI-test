@@ -33,7 +33,7 @@ pipeline {
                 sh "docker push ${dockerImage.id}"
             }
         }
-        stage('Schedule Stagin'){
+        stage('Schedule Stagin Deployment'){
             when {
                 branch 'main'
             }
