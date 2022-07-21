@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options {
-        timeout(time: 5, unit: 'MINUTES')
+        timeout(time: 10, unit: 'MINUTES')
     }
     environment {
         ARTIFACT_ID = "fredydlemus/webapp:${env.BUILD_NUMBER}"
