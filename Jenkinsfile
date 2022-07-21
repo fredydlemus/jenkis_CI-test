@@ -33,5 +33,13 @@ pipeline {
                 sh "docker push ${dockerImage.id}"
             }
         }
+        stage('Schedule Stagin'){
+            when {
+                branch 'main'
+            }
+            steps {
+                build job: 'deploy-webapp-staging', parameters: [string(name: 'ARTIFACT_ID', value: ${env.ARTIFACT_ID})], wait: false
+            }
+        }
     }
 }
